@@ -1,0 +1,108 @@
+@import '../../style/mixin.scss';
+
+.loginContainer{
+    padding-top: 1.95rem;
+    p, span, input{
+        font-family: Helvetica Neue,Tahoma,Arial;
+    }
+}
+.change_login{
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    color: #fff;
+    font-size: 0.7rem;
+    transform: translate(0,-50%);
+}
+.loginForm{
+    margin-top: 0.6rem;
+    background-color: #fff;
+    .input_container{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid #f1f1f1;
+        input{
+            font-size: 0.7rem;
+        }
+        .button_switch{
+            display: flex;
+            justify-content: space-between;
+            line-height: 0.9rem;
+            span{
+                font-size: 0.6rem;
+                color: #aaa6a6;
+                padding: 0 0.4rem;;
+            }
+            span:nth-of-type(2){
+                line-height: 1.1rem;
+            }
+            .active_span{
+                color: #409eff;
+                transition: all 0.3s;
+            }
+            .circle_button{
+                @include wh(1.8rem,0.9rem);
+                background-color: #aaa6a6;
+                border-radius: 0.9rem;
+                position: relative;
+                box-sizing: border-box;
+                &.trans_to_right{
+                    background-color: rgb(19, 206, 102);
+                    transition: all 0.3s;
+                }
+            }
+            .circle_button::after{
+                content: "";
+                @include wh(0.7rem,0.7rem);
+                background-color:#fff;
+                border-radius: 100%;
+                margin: 0.115rem 0.08rem;
+                position: absolute;
+                transition: all 0.3s;
+            }
+            .circle_button.trans_to_right::after{
+                margin-left: 26.5px;
+            }
+        }
+        
+    }
+    .captcha_code_container{
+        height: 2.2rem;
+        .img_change_img{
+            display: flex;
+            align-items: center;
+            img{
+                @include wh(3.5rem, 1.5rem);
+                margin-right: .2rem;
+            }
+            .change_img{
+                
+                p{
+                    font-size: .5rem;
+                }
+            }
+        }
+    }
+}
+.login_tips{
+    color: #ff0000;
+    font-size: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    line-height: 0.5rem;
+}
+.login_container{
+    background-color: #4cd964;
+    margin: 0 0.5rem 1rem;
+    padding: 0.4rem 0rem;
+    font-size: 0.8rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    color: #fff;
+}
+.to_forget{
+    float: right;
+    font-size: 0.6rem;
+    color: #3b95e9;
+    margin-right: .3rem;
+}
